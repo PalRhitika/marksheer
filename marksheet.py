@@ -24,6 +24,9 @@ html_text = html_text.replace(
     '<link rel="stylesheet" href="marksheet.css" />', ""
 )
 
+grading_html = fc("gradings.html")
+html_text = html_text.replace("<!-- #gradings-table -->", grading_html)
+
 css = fc("marksheet.css")
 css = replace_colors_with_black_or_white(css)
 
