@@ -65,8 +65,8 @@ body {
 }
 
 table {
-    width: 575px;
-    max-width: 575px;
+    /* width: 575px;
+    max-width: 575px; */
     border-spacing: 0;
     border-collapse: collapse;
     border: 2px solid #000000;
@@ -76,7 +76,7 @@ table {
 
 
 th, td { padding: 8px; }
-th { color: #ffffff; font-weight: bold; vertical-align: bottom; } 
+th { color: #ffffff; font-weight: bold; vertical-align: bottom; }
 thead tr.line1 { background-color: #ffffff; color: #000000; }
 thead tr.line2 { background-color: #dfaeae; color: #000000; }
 tbody { border: 2px solid #000000; }
