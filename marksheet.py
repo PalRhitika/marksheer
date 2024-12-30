@@ -6,9 +6,10 @@ from rgb8 import replace_colors_with_black_or_white
 from scores_rows import scores_rows
 # from students import students
 
-students = {}
-with open("samples/marksheet.json") as f:
-    students = json.loads(f.read())
+student = {}
+with open("samples/student.json") as f:
+    student = json.loads(f.read())
+
 
 html_text = """"""
 with open("marksheet.html") as f:
@@ -30,13 +31,12 @@ def generate_marksheet(student):
     # Replace the data
     soup = BeautifulSoup(html_text, "html.parser")
     tbody = soup.find("tbody", id="scores")
-    # print(tbody)
     tbody.clear()
     tbody.append(BeautifulSoup(scores_rows(student["subjects"]), "html.parser"))
     marksheet = soup.prettify()
 
-    xy = [50, 50]
-    wh = [545, 550] # dimension of the table
+    xy = [50, 50]   # @todo Caclulate
+    wh = [545, 550] # @todo Calculate dimensions of the table
     page.insert_htmlbox(
         pymupdf.Rect(xy[0], xy[1], wh[0] + xy[0], wh[1] + xy[1]),
         marksheet,
@@ -53,9 +53,9 @@ def generate_marksheet(student):
 
 
 final_doc = pymupdf.open()
-for student in students:
-    doc = generate_marksheet(student)
-    final_doc.insert_pdf(doc)
+# for student in students:
+doc = generate_marksheet(student)
+final_doc.insert_pdf(doc)
 
 
 final_doc.save("marksheets-combined.pdf", garbage=4, deflate=True, clean=2, deflate_images=True)
