@@ -22,24 +22,10 @@ with open("marksheet.css") as f:
     css_content = f.read()
     css_content = replace_colors_with_black_or_white(css_content)
 
-# place_logo()
-# place_qr_code()
-# ...
-
-
-# def data(page, x, y, text):
-#     page.insert_text((x, y), text, fontname="data", fontsize=12, color=(0, 0, 0))
-
-# def template(page, x, y, text):
-#     page.insert_text((x, y), text, fontname="template", fontsize=12, color=(0, 1, 1))
-
 
 def generate_marksheet(student):
     doc = pymupdf.open()
     page = doc.new_page(width=595, height=842)
-
-    # page.insert_font(fontname="template", fontfile="fonts/template.ttf")
-    # page.insert_font(fontname="data", fontfile="fonts/data.ttf")
 
     # Replace the data
     soup = BeautifulSoup(html_text, "html.parser")
