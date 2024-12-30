@@ -40,6 +40,7 @@
 .bb1 { border-bottom: 1px solid #CCCCCC; }
 .bb2 { border-bottom: 2px solid #000000; }
 .bl2 { border-left: 2px solid #052402; }
+.bt2 { border-top: 2px solid #000000; }
 
 span.data { text-align: center; display: inline-block; min-width: 150px; width: 150px; overflow: hidden; border-bottom: 1px dashed rgb(0, 47, 255); }
 span.data.long { width: 300px; }
