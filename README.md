@@ -1,12 +1,13 @@
 # Marksheet Generator
 ## Marksheet Features:
-- printable
-- web embeddable
-- bulk print / storage
+- web display
+- printable from the web
+- bulk pdf print
+- storage
 
 ## CSS Color Features:
 - Color find and replace in css
-- to monochromatic black/white
+- Monochromatic black/white
 
 ## Subjectwise Marks
 
@@ -14,6 +15,7 @@ JSON Fields for the Subjectwise scores:
 
 | Key         | Sample Value | Description |
 |-------------|--------------|-------------|
+| code        | COD          | Subject Code
 | name        | Mathematics  | Name of the subject
 | thfm        | 100          | Theory Full Marks
 | thpm        | 40           | Theory Pass Marks
