@@ -53,25 +53,32 @@ html {
     height: 100%;
     font-family: Arial, sans-serif;
     font-weight: normal;
+    box-sizing: border-box;
 }
 
 body {
     background-color: #ffffff;
     color: #000000;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
 }
+header{
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   width:100%;
+   padding-inline: 4rem;
 
+}
 table {
-    /* width: 575px;
-    max-width: 575px; */
+    width: 600px;
+    max-width: 600px;
     border-spacing: 0;
     border-collapse: collapse;
     border: 2px solid #000000;
     background-color: #c3f3ff;
     overflow: hidden;
+    margin-inline: auto;
 }
 
 
