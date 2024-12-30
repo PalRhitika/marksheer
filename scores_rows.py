@@ -15,8 +15,8 @@ html_snippet = """
     <td class="r pm bl2">__PR_PM__</td>
     <td class="r mo bl2">__TH_MO__</td>
     <td class="r mo bl2">__PR_MO__</td>
-    <td class="r grade bl2">__GRADE__</td>
     <td class="c gpa bl2">__GPA__</td>
+    <td class="r grade bl2">__GRADE__</td>
 </tr>
 """
 
@@ -37,8 +37,8 @@ def scores_rows(subjects=[]):
         hs = hs.replace("__PR_PM__", str(subject.get("prpm", "n/a")))
         hs = hs.replace("__TH_MO__", str(subject.get("thmo", "n/a")))
         hs = hs.replace("__PR_MO__", str(subject.get("prmo", "n/a")))
-        hs = hs.replace("__GRADE__", str(subject.get("grade", "n/a")))
         hs = hs.replace("__GPA__", str(subject.get("gpa", "n/a")))
+        hs = hs.replace("__GRADE__", str(subject.get("grade", "n/a")))
         row += hs
 
     # 12 lines of total rows, to leave a vertical space

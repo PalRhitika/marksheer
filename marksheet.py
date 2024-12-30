@@ -38,7 +38,7 @@ def generate_marksheet(student):
     tbody.clear()
     tbody.append(BeautifulSoup(scores_rows(student["subjects"]), "html.parser"))
     marksheet = soup.prettify()
-    print(marksheet)
+
     xy = [40, 40]
     wh = [590, 520] # dimension of the table
     page.insert_htmlbox(

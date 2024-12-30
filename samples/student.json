@@ -33,8 +33,8 @@
             "prpm": 10,
             "thmo": 85,
             "prmo": 10,
-            "grade": "A",
             "gpa": 3.8,
+            "grade": "A",
             "percentage": 85.00,
             "remarks": "Pass"
         },
@@ -48,8 +48,8 @@
             "prpm": 10,
             "thmo": 90,
             "prmo": 15,
-            "grade": "A+",
             "gpa": 4.0,
+            "grade": "A+",
             "percentage": 90.00,
             "remarks": "Pass"
         },
@@ -63,8 +63,8 @@
             "prpm": 10,
             "thmo": 92,
             "prmo": 20,
-            "grade": "A+",
             "gpa": 4.0,
+            "grade": "A+",
             "percentage": 92.00,
             "remarks": "Pass"
         },
@@ -78,8 +78,8 @@
             "prpm": 10,
             "thmo": 80,
             "prmo": 10,
-            "grade": "A",
             "gpa": 3.7,
+            "grade": "A",
             "percentage": 80.00,
             "remarks": "Pass"
         },
@@ -93,8 +93,8 @@
             "prpm": 10,
             "thmo": 95,
             "prmo": 20,
-            "grade": "A+",
             "gpa": 4.0,
+            "grade": "A+",
             "percentage": 95.00,
             "remarks": "Pass"
         }
