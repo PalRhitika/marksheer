@@ -1,8 +1,10 @@
-Generate a marksheet with following features:
-	- printable
-	- web embeddable
-	- bulk print / storage
+# Marksheet Generator
 
-Features:
-	- Color find and replace in css
-	- to monochromatic black/white
+## Marksheet Features:
+- printable
+- web embeddable
+- bulk print / storage
+
+## CSS Color Features:
+- Color find and replace in css
+- to monochromatic black/white
