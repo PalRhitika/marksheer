@@ -41,6 +41,8 @@
 .bb2 { border-bottom: 2px solid #000000; }
 .bl2 { border-left: 2px solid #052402; }
 .bt2 { border-top: 2px solid #000000; }
+.bt1 { border-left: 1px solid #052402; }
+
 
 span.data { text-align: center; display: inline-block; min-width: 150px; width: 150px; overflow: hidden; border-bottom: 1px dashed rgb(0, 47, 255); }
 span.data.long { width: 300px; }
@@ -80,6 +82,7 @@ table {
     border: 2px solid #000000;
     background-color: #c3f3ff;
     overflow: hidden;
+    margin-bottom:0.5rem ;
     /* width: 575px; */
     /* max-width: 575px; */
     /* margin-inline: auto; */
@@ -96,17 +99,18 @@ tbody tr { border-bottom: 1px solid #999393; }
 footer {
     display: flex;
     justify-content:flex-start;
-    width: 100%;
-    max-width: 800px;
-    padding: 20px;
     padding-inline: 4rem;
+    min-width:800px;
+
+
+}
+footer table{
+    width: 100%;
+}
+#grading thead th{
+    color:black !important;
 }
 
-footer .total-marks {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
 
 /**

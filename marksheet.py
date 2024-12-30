@@ -42,7 +42,7 @@ def generate_marksheet(student):
     tbody.append(BeautifulSoup(scores_rows(student["subjects"]), "html.parser"))
     marksheet = soup.prettify()
 
-    xy = [40, 40]
+    xy = [50, 50]
     wh = [590, 520] # dimension of the table
     page.insert_htmlbox(
         pymupdf.Rect(xy[0], xy[1], wh[0] + xy[0], wh[1] + xy[1]),
