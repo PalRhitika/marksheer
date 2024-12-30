@@ -7,7 +7,7 @@ from scores_rows import scores_rows
 # from students import students
 
 students = {}
-with open("marksheet.json") as f:
+with open("samples/marksheet.json") as f:
     students = json.loads(f.read())
 
 html_text = """"""
