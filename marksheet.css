@@ -11,8 +11,8 @@
 /**
  * Colors
  */
-.w { background-color: #FFFFFF; color: #000000; }
-.b { background-color: #c9bfbf; color: #ffffff; }
+/* .w { background-color: #FFFFFF; color: #000000; }
+.b { background-color: #c9bfbf; color: #ffffff; } */
 
 /**
  * Subject
@@ -106,6 +106,9 @@ footer .total-marks {
 }
 
 
+/**
+ * For web page's print view
+ */
 @media print {
     *, * *, * * *, * * * *, * * * * * { color: #000000!important; border-color: #000000!important; background-color: #ffffff!important; }
     .bb1 { border-color: #CCCCCC!important; }

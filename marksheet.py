@@ -6,22 +6,26 @@ from rgb8 import replace_colors_with_black_or_white
 from scores_rows import scores_rows
 # from students import students
 
-student = {}
-with open("samples/student.json") as f:
-    student = json.loads(f.read())
+
+# File Contents
+def fc(filename: str):
+    contents = """"""
+    with open(filename, encoding="utf8") as f:
+        contents = f.read()
+
+    return contents
 
 
-html_text = """"""
-with open("marksheet.html") as f:
-    html_text = f.read()
-    marksheet = html_text = html_text.replace(
-        '<link rel="stylesheet" href="marksheet.css" />', ""
-    )
+student = json.loads(fc("samples/student.json"))
 
-css_content = """"""
-with open("marksheet.css") as f:
-    css_content = f.read()
-    css_content = replace_colors_with_black_or_white(css_content)
+html_text = fc("marksheet.html")
+html_text = html_text.replace(
+    # must match exactly
+    '<link rel="stylesheet" href="marksheet.css" />', ""
+)
+
+css = fc("marksheet.css")
+css = replace_colors_with_black_or_white(css)
 
 
 def generate_marksheet(student):
@@ -40,7 +44,7 @@ def generate_marksheet(student):
     page.insert_htmlbox(
         pymupdf.Rect(xy[0], xy[1], wh[0] + xy[0], wh[1] + xy[1]),
         marksheet,
-        css=css_content,
+        css=css,
         scale_low=0,
         archive=False,
         rotate=0,
