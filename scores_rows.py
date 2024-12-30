@@ -15,8 +15,8 @@ html_snippet = """
     <td class="r pm bl2">__PR_PM__</td>
     <td class="r mo bl2">__TH_MO__</td>
     <td class="r mo bl2">__PR_MO__</td>
-    <td class="c gpa bl2">__GPA__</td>
-    <td class="r grade bl2">__GRADE__</td>
+    <td class="r gpa bl2">__GPA__</td>
+    <td class="c grade bl2">__GRADE__</td>
 </tr>
 """
 
