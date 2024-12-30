@@ -1,0 +1,97 @@
+{
+    "student": {
+        "id": "",
+        "name": "John Doe",
+        "roll_number": "12345",
+        "class": "10th"
+    },
+    "marksheet": {
+        "id": "1",
+        "sequence": "0001",
+        "printed_on": "2024-12-29",
+        "printed_by": "A. Principal",
+        "exam": "Second Terminal Exam"
+    },
+    "school": {
+        "name": "XYZ High School",
+        "address": "Address, Ward"
+    },
+    "total": {
+        "fullmarks": 690,
+        "scored": 650,
+        "percentage": 94.20,
+        "rank": "51st"
+    },
+    "subjects": [
+        {
+            "code": "MTH",
+            "name": "Mathematics",
+            "thfm": 100,
+            "thpm": 40,
+            "prfm": 20,
+            "prpm": 10,
+            "thmo": 85,
+            "prmo": 10,
+            "gpa": 3.8,
+            "grade": "A",
+            "percentage": 85.00,
+            "remarks": "Pass"
+        },
+        {
+            "code": "ENG",
+            "name": "English",
+            "thfm": 100,
+            "thpm": 40,
+            "prfm": 20,
+            "prpm": 10,
+            "thmo": 90,
+            "prmo": 15,
+            "gpa": 4.0,
+            "grade": "A+",
+            "percentage": 90.00,
+            "remarks": "Pass"
+        },
+        {
+            "code": "SCI",
+            "name": "Science",
+            "thfm": 100,
+            "thpm": 40,
+            "prfm": 20,
+            "prpm": 10,
+            "thmo": 92,
+            "prmo": 20,
+            "gpa": 4.0,
+            "grade": "A+",
+            "percentage": 92.00,
+            "remarks": "Pass"
+        },
+        {
+            "code": "SOC",
+            "name": "Social Studies",
+            "thfm": 100,
+            "thpm": 40,
+            "prfm": 20,
+            "prpm": 10,
+            "thmo": 80,
+            "prmo": 10,
+            "gpa": 3.7,
+            "grade": "A",
+            "percentage": 80.00,
+            "remarks": "Pass"
+        },
+        {
+            "code": "CMP",
+            "name": "Computer Science",
+            "thfm": 100,
+            "thpm": 40,
+            "prfm": 20,
+            "prpm": 10,
+            "thmo": 95,
+            "prmo": 20,
+            "gpa": 4.0,
+            "grade": "A+",
+            "percentage": 95.00,
+            "remarks": "Pass"
+        }
+    ]
+}
