@@ -69,17 +69,20 @@ header{
    justify-content: flex-start;
    width:100%;
    padding-inline: 4rem;
-
+   margin-bottom:0.5rem
+}
+main{
+    padding-inline: 4rem;
 }
 table {
-    width: 575px;
-    max-width: 575px;
+    /* width: 575px; */
+    /* max-width: 575px; */
     border-spacing: 0;
     border-collapse: collapse;
     border: 2px solid #000000;
     background-color: #c3f3ff;
     overflow: hidden;
-    margin-inline: auto;
+    /* margin-inline: auto; */
 }
 
 
@@ -92,11 +95,11 @@ tbody tr { border-bottom: 1px solid #999393; }
 
 footer {
     display: flex;
-    justify-content: space-between;
+    justify-content:flex-start;
     width: 100%;
     max-width: 800px;
     padding: 20px;
-    font-size: 16px;
+    padding-inline: 4rem;
 }
 
 footer .total-marks {
