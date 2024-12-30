@@ -21,6 +21,7 @@ student = json.loads(fc("samples/student.json"))
 html_text = fc("marksheet.html")
 html_text = html_text.replace(
     # must match exactly
+    # we are providing css as parameter
     '<link rel="stylesheet" href="marksheet.css" />', ""
 )
 
@@ -59,11 +60,14 @@ def generate_marksheet(student):
     return doc
 
 
-final_doc = pymupdf.open()
-# for student in students:
+bulk_pdf = pymupdf.open()
 doc = generate_marksheet(student)
-final_doc.insert_pdf(doc)
+bulk_pdf.insert_pdf(doc)
 
 
-final_doc.save("marksheets-combined.pdf", garbage=4, deflate=True, clean=2, deflate_images=True)
-print("Marksheets generated and combined successfully!")
+bulk_pdf.save(
+    "marksheets-combined.pdf", garbage=4, deflate=True, clean=2, deflate_images=True
+)
+
+if __name__ == "__main__":
+    print("Marksheets combined successfully!")

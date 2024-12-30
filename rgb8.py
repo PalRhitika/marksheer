@@ -69,7 +69,7 @@ def replace_colors_with_black_or_white(text):
     return text
 
 
-if __name__ == "main":
+if __name__ == "__main__":
 
     # Example usage
     input_text = (

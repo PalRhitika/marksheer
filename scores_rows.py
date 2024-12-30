@@ -3,7 +3,7 @@ import re
 __all__ = ["scores_rows"]
 
 
-# Mind the number of columns: 11
+# Master HTML: marksheet.html
 html_snippet = """
 <tr class="bt2">
     <td class="r sn">__SN__</td>
@@ -22,28 +22,28 @@ html_snippet = """
 
 
 def scores_rows(subjects=[]):
-    row = """"""
-    counter = 0
+    na = "n/a"
+    html_row = """"""
+    counter = 1
     for subject in subjects:
-        counter += 1
-
         hs = html_snippet
         hs = hs.replace("__SN__", str(counter))
-        hs = hs.replace("__SUBJECT__", str(subject.get("name", "n/a")))
-        hs = hs.replace("__CREDIT_HOUR__", str(subject.get("ch", "n/a")))
-        hs = hs.replace("__TH_FM__", str(subject.get("thfm", "n/a")))
-        hs = hs.replace("__PR_FM__", str(subject.get("prfm", "n/a")))
-        hs = hs.replace("__TH_PM__", str(subject.get("thpm", "n/a")))
-        hs = hs.replace("__PR_PM__", str(subject.get("prpm", "n/a")))
-        hs = hs.replace("__TH_MO__", str(subject.get("thmo", "n/a")))
-        hs = hs.replace("__PR_MO__", str(subject.get("prmo", "n/a")))
-        hs = hs.replace("__GPA__", str(subject.get("gpa", "n/a")))
-        hs = hs.replace("__GRADE__", str(subject.get("grade", "n/a")))
-        row += hs
+        hs = hs.replace("__SUBJECT__", str(subject.get("name", na)))
+        hs = hs.replace("__CREDIT_HOUR__", str(subject.get("ch", na)))
+        hs = hs.replace("__TH_FM__", str(subject.get("thfm", na)))
+        hs = hs.replace("__PR_FM__", str(subject.get("prfm", na)))
+        hs = hs.replace("__TH_PM__", str(subject.get("thpm", na)))
+        hs = hs.replace("__PR_PM__", str(subject.get("prpm", na)))
+        hs = hs.replace("__TH_MO__", str(subject.get("thmo", na)))
+        hs = hs.replace("__PR_MO__", str(subject.get("prmo", na)))
+        hs = hs.replace("__GPA__", str(subject.get("gpa", na)))
+        hs = hs.replace("__GRADE__", str(subject.get("grade", na)))
+        html_row += hs
+        counter += 1
 
-    # 12 lines of total rows, to leave a vertical space
-    if(len(subjects)<12):
-        for i in range(12 - len(subjects)):
-            row += re.sub(r'\_\_[A-Z0-9\_]+\_\_', '', html_snippet)
+    # multi lines of total rows to leave a vertical space in the scores area
+    if(counter<13):
+        for i in range(13 - counter):
+            html_row += re.sub(r"\_\_[A-Z0-9\_]+\_\_", "", html_snippet)
 
-    return row
+    return html_row
