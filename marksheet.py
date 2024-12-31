@@ -19,8 +19,8 @@ def fc(filename: str):
 student = json.loads(fc("samples/student.json"))
 
 marksheet_html = fc("marksheet.html")
-grading_html = fc("gradings.html")
-marksheet_html = marksheet_html.replace("<!-- #gradings-table -->", grading_html)
+marksheet_html = marksheet_html.replace("<!-- #summary-table -->", fc("summary.html"))
+marksheet_html = marksheet_html.replace("<!-- #gradings-table -->", fc("gradings.html"))
 marksheet_html = marksheet_html.replace(
     # must match exactly
     # we are modifying and providing same css as parameter
@@ -44,7 +44,7 @@ def generate_marksheet(student):
     marksheet = soup.prettify()
 
     xy = [50, 50]
-    wh = [590, 600] # dimension of the table
+    wh = [590, 600] # dimension of the html area
     page.insert_htmlbox(
         pymupdf.Rect(xy[0], xy[1], wh[0] + xy[0], wh[1] + xy[1]),
         marksheet,
