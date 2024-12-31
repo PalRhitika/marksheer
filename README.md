@@ -11,7 +11,7 @@
 
 ## Subjectwise Marks
 
-JSON Fields for the Subjectwise scores:
+JSON Fields for the individual subjects:
 
 | Key         | Sample Value | Description |
 |-------------|--------------|-------------|
@@ -20,7 +20,7 @@ JSON Fields for the Subjectwise scores:
 | thfm        | 100          | Theory Full Marks
 | thpm        | 40           | Theory Pass Marks
 | prfm        | 20           | Practical Full Marks
-| prpm        | 10           | Pracical Pass Marks
+| prpm        | 10           | Practical Pass Marks
 | thmo        | 85           | Theory Marks Obtained
 | prmo        | 10           | Practical Marks Obtained
 | gpa         | 3.8          | Grade Point Avegrage
