@@ -18,15 +18,15 @@ def fc(filename: str):
 
 student = json.loads(fc("samples/student.json"))
 
-html_text = fc("marksheet.html")
-html_text = html_text.replace(
+marksheet_html = fc("marksheet.html")
+grading_html = fc("gradings.html")
+marksheet_html = marksheet_html.replace("<!-- #gradings-table -->", grading_html)
+marksheet_html = marksheet_html.replace(
     # must match exactly
     # we are providing css as parameter
     '<link rel="stylesheet" href="marksheet.css" />', ""
 )
 
-grading_html = fc("gradings.html")
-html_text = html_text.replace("<!-- #gradings-table -->", grading_html)
 
 css = fc("marksheet.css")
 css = replace_colors_with_black_or_white(css)
@@ -37,7 +37,7 @@ def generate_marksheet(student):
     page = doc.new_page(width=595, height=842)
 
     # Replace the data
-    soup = BeautifulSoup(html_text, "html.parser")
+    soup = BeautifulSoup(marksheet_html, "html.parser")
     tbody = soup.find("tbody", id="scores")
     tbody.clear()
     tbody.append(BeautifulSoup(scores_rows(student["subjects"]), "html.parser"))
