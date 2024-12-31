@@ -85,6 +85,7 @@ table {
     background-color: #c3f3ff;
     overflow: hidden;
     margin-bottom:0.5rem ;
+    width: 100%;
 }
 
 th, td { padding: 8px; }
