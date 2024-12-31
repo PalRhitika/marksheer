@@ -95,14 +95,9 @@ thead tr.line2 { background-color: #dfaeae; color: #000000; }
 tbody { border: 2px solid #000000; }
 tbody tr { border-bottom: 1px solid #999393; }
 
-footer {
-    display: flex;
-    justify-content:flex-start;
-    padding-inline: 4rem;
-    min-width:800px;
+#middle{
+    width: 830px;
 }
-
-footer table { width: 100%; }
 
 #gradings thead th { color:black !important; }
 

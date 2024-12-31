@@ -27,6 +27,8 @@ html_text = html_text.replace(
 
 grading_html = fc("gradings.html")
 html_text = html_text.replace("<!-- #gradings-table -->", grading_html)
+middle_html = fc("summary.html")
+html_text = html_text.replace("<!-- #middle-table -->", middle_html)
 
 css = fc("marksheet.css")
 css = replace_colors_with_black_or_white(css)
@@ -44,7 +46,7 @@ def generate_marksheet(student):
     marksheet = soup.prettify()
 
     xy = [50, 50]
-    wh = [590, 520] # dimension of the table
+    wh = [590, 600] # dimension of the table
     page.insert_htmlbox(
         pymupdf.Rect(xy[0], xy[1], wh[0] + xy[0], wh[1] + xy[1]),
         marksheet,
