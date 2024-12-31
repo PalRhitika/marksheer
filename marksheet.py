@@ -23,7 +23,7 @@ grading_html = fc("gradings.html")
 marksheet_html = marksheet_html.replace("<!-- #gradings-table -->", grading_html)
 marksheet_html = marksheet_html.replace(
     # must match exactly
-    # we are providing css as parameter
+    # we are modifying and providing same css as parameter
     '<link rel="stylesheet" href="marksheet.css" />', ""
 )
 
@@ -61,6 +61,7 @@ def generate_marksheet(student):
 
 
 bulk_pdf = pymupdf.open()
+# Loop through the students and produce PDF
 doc = generate_marksheet(student)
 bulk_pdf.insert_pdf(doc)
 
