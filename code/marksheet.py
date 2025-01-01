@@ -18,17 +18,19 @@ def fc(filename: str):
 
 student = json.loads(fc("samples/student.json"))
 
-marksheet_html = fc("marksheet.html")
-marksheet_html = marksheet_html.replace("<!-- #summary-table -->", fc("summary.html"))
-marksheet_html = marksheet_html.replace("<!-- #gradings-table -->", fc("gradings.html"))
+marksheet_html = fc("theme/marksheet.html")
+marksheet_html = marksheet_html.replace("<!-- #scores-table -->", fc("theme/scores.html"))
+marksheet_html = marksheet_html.replace("<!-- #summary-table -->", fc("theme/summary.html"))
+marksheet_html = marksheet_html.replace(
+    "<!-- #gradings-table -->", fc("theme/gradings.html")
+)
 marksheet_html = marksheet_html.replace(
     # must match exactly
     # we are modifying and providing same css as parameter
     '<link rel="stylesheet" href="marksheet.css" />', ""
 )
 
-
-css = fc("marksheet.css")
+css = fc("theme/marksheet.css")
 css = replace_colors_with_black_or_white(css)
 
 
