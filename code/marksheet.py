@@ -4,9 +4,12 @@ import pymupdf
 from bs4 import BeautifulSoup
 from rgb8 import replace_colors_with_black_or_white
 from scores_rows import scores_rows
-from libraries import fc, fw
+from libraries import fc, fw, compact_html
 
 marksheet_html = fc("themes/marksheet.html")
+marksheet_html = marksheet_html.replace(
+    "<!-- #header-html -->", fc("themes/header.html")
+)
 marksheet_html = marksheet_html.replace(
     "<!-- #scores-table -->", fc("themes/scores.html")
 )
@@ -46,12 +49,13 @@ def generate_marksheet(student={}, sequence: int = 0):
     tbody.clear()
     tbody.append(BeautifulSoup(scores_rows(student["subjects"]), "html.parser"))
     marksheet = soup.prettify()
-
+    marksheet = marksheet.replace("__SEQUENCE__", sequence)
+    
     fw(
         f"individuals/individual-{sequence}.html",
-        marksheet.replace(
-            "<!-- #css -->", '<link rel="stylesheet" href="marksheet.css" />'
-        ),
+        compact_html(marksheet.replace(
+        "<!-- #css -->", '<link rel="stylesheet" href="marksheet.css" />'
+    ))
     )  # Remove this line
 
     xy = [50, 50]
@@ -74,13 +78,18 @@ def generate_marksheet(student={}, sequence: int = 0):
 student = json.loads(fc("samples/student.json"))
 
 bulk_pdf = pymupdf.open()
-for sequence in range(1, 100):  # Loop through the students and produce PDF
-    doc = generate_marksheet(student, str(sequence).zfill(3))
+
+batch = ""
+for sequence in range(1, 9):  # Loop through the students and produce PDF
+    doc = generate_marksheet(student, str(sequence).zfill(4))
     bulk_pdf.insert_pdf(doc)
 
 
 bulk_pdf.save(
-    "pdfs/combined.pdf"
+    "pdfs/combined.pdf",
+    garbage=4,
+    clean=2,
+    deflate=True
 )
 
 if __name__ == "__main__":
