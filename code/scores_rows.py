@@ -44,6 +44,7 @@ def scores_rows(subjects=[]):
     # multi lines of total rows to leave a vertical space in the scores area
     if(counter<13):
         for i in range(0, 13 - counter):
-            html_row += re.sub(r"\_\_[A-Z0-9\_]+\_\_", "", html_snippet)
+            hs = html_snippet.replace("__SN__", "<br/>")
+            html_row += re.sub(r"\_\_[A-Z0-9\_]+\_\_", "", hs)
 
     return html_row

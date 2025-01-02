@@ -27,3 +27,10 @@ JSON Fields for the individual subjects:
 | grade       | A            | Letter Grade
 | percentage  | 85.00        | Percentage
 | remarks     | Pass         | Remarks
+
+
+## Marksheet Generation
+
+```
+python code/marksheet.py
+```

@@ -1,28 +1,20 @@
-import json
-import pymupdf  # PyMuPDF
 import re
+import json
+import pymupdf
 from bs4 import BeautifulSoup
 from rgb8 import replace_colors_with_black_or_white
 from scores_rows import scores_rows
-# from students import students
+from libraries import fc, fw
 
-
-# File Contents
-def fc(filename: str):
-    contents = """"""
-    with open(filename, encoding="utf8") as f:
-        contents = f.read()
-
-    return contents
-
-
-student = json.loads(fc("samples/student.json"))
-
-marksheet_html = fc("theme/marksheet.html")
-marksheet_html = marksheet_html.replace("<!-- #scores-table -->", fc("theme/scores.html"))
-marksheet_html = marksheet_html.replace("<!-- #summary-table -->", fc("theme/summary.html"))
+marksheet_html = fc("themes/marksheet.html")
 marksheet_html = marksheet_html.replace(
-    "<!-- #gradings-table -->", fc("theme/gradings.html")
+    "<!-- #scores-table -->", fc("themes/scores.html")
+)
+marksheet_html = marksheet_html.replace(
+    "<!-- #summary-table -->", fc("themes/summary.html")
+)
+marksheet_html = marksheet_html.replace(
+    "<!-- #gradings-table -->", fc("themes/gradings.html")
 )
 marksheet_html = marksheet_html.replace(
     # must match exactly
@@ -30,11 +22,21 @@ marksheet_html = marksheet_html.replace(
     '<link rel="stylesheet" href="marksheet.css" />', ""
 )
 
-css = fc("theme/marksheet.css")
+
+css = fc("themes/marksheet.css")
 css = replace_colors_with_black_or_white(css)
 
 
-def generate_marksheet(student):
+fw("individuals/marksheet.css", css)
+fw(
+    "individuals/full.html",
+    marksheet_html.replace(
+        "<!-- #css -->", '<link rel="stylesheet" href="marksheet.css" />'
+    ),
+)
+
+
+def generate_marksheet(student={}, sequence: int = 0):
     doc = pymupdf.open()
     page = doc.new_page(width=595, height=842)
 
@@ -44,6 +46,13 @@ def generate_marksheet(student):
     tbody.clear()
     tbody.append(BeautifulSoup(scores_rows(student["subjects"]), "html.parser"))
     marksheet = soup.prettify()
+
+    fw(
+        f"individuals/individual-{sequence}.html",
+        marksheet.replace(
+            "<!-- #css -->", '<link rel="stylesheet" href="marksheet.css" />'
+        ),
+    )  # Remove this line
 
     xy = [50, 50]
     wh = [590, 600] # dimension of the html area
@@ -62,14 +71,16 @@ def generate_marksheet(student):
     return doc
 
 
+student = json.loads(fc("samples/student.json"))
+
 bulk_pdf = pymupdf.open()
-# Loop through the students and produce PDF
-doc = generate_marksheet(student)
-bulk_pdf.insert_pdf(doc)
+for sequence in range(1, 100):  # Loop through the students and produce PDF
+    doc = generate_marksheet(student, str(sequence).zfill(3))
+    bulk_pdf.insert_pdf(doc)
 
 
 bulk_pdf.save(
-    "marksheets-combined.pdf", garbage=4, deflate=True, clean=2, deflate_images=True
+    "pdfs/combined.pdf"
 )
 
 if __name__ == "__main__":

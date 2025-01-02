@@ -85,11 +85,16 @@ table {
     background-color: #c3f3ff;
     overflow: hidden;
     margin-bottom:0.5rem ;
-    width: 100%;
+    width: 700px;
+    min-width: 100%;
+}
+
+table#summary{
+    text-align: center;
 }
 
 th, td { padding: 8px; }
-th { color: #ffffff; font-weight: bold; vertical-align: center; }
+th { color: #000000; font-weight: bold; vertical-align: center; }
 thead tr.line1 { background-color: #ffffff; color: #000000; }
 thead tr.line2 { background-color: #dfaeae; color: #000000; }
 tbody { border: 2px solid #000000; }
@@ -101,11 +106,6 @@ footer {
     padding-inline: 4rem;
 
 }
-
-footer table { width: 100% !important}
-
-#gradings thead th { color:black !important; }
-
 
 /**
  * For web page's print view
