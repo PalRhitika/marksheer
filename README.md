@@ -33,4 +33,17 @@ JSON Fields for the individual subjects:
 python code/marksheet.py
 ```
 
-It prodces pdf/*.pdf files
+It produces pdfs/combined.pdf pages
+
+## @todo
+- Remove white background from css and make pages transparent.
+
+
+## Media Types
+| Type | Description
+|------|-------------
+|.pdf  | 
+|.png  |-------------
+|.svg  |-------------
+|.epgz |-------------
+|.al4  |-------------
