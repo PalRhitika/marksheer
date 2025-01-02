@@ -1,13 +1,11 @@
 # Marksheet Generator
+
 ## Marksheet Features:
 - web display
 - printable from the web
 - bulk pdf print
 - storage
-
-## CSS Color Features:
-- Color find and replace in css
-- Monochromatic black/white
+- verification
 
 ## Subjectwise Marks
 
@@ -34,3 +32,5 @@ JSON Fields for the individual subjects:
 ```
 python code/marksheet.py
 ```
+
+It prodces pdf/*.pdf files

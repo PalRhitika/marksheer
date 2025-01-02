@@ -8,16 +8,16 @@ from libraries import fc, fw, compact_html
 
 marksheet_html = fc("themes/marksheet.html")
 marksheet_html = marksheet_html.replace(
-    "<!-- #header-html -->", fc("themes/header.html")
+    "<!-- #header-html -->", fc("themes/_header.html")
 )
 marksheet_html = marksheet_html.replace(
-    "<!-- #scores-table -->", fc("themes/scores.html")
+    "<!-- #scores-table -->", fc("themes/_scores.html")
 )
 marksheet_html = marksheet_html.replace(
-    "<!-- #summary-table -->", fc("themes/summary.html")
+    "<!-- #summary-table -->", fc("themes/_summary.html")
 )
 marksheet_html = marksheet_html.replace(
-    "<!-- #gradings-table -->", fc("themes/gradings.html")
+    "<!-- #gradings-table -->", fc("themes/_gradings.html")
 )
 marksheet_html = marksheet_html.replace(
     # must match exactly
@@ -80,7 +80,7 @@ student = json.loads(fc("samples/student.json"))
 bulk_pdf = pymupdf.open()
 
 batch = ""
-for sequence in range(1, 9):  # Loop through the students and produce PDF
+for sequence in range(1, 300):  # Loop through the students and produce PDF
     doc = generate_marksheet(student, str(sequence).zfill(4))
     bulk_pdf.insert_pdf(doc)
 
