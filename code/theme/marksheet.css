@@ -7,7 +7,9 @@
 
 .h { display: none; visibility: hidden; }
 .highlight { background-color: #c7c1c1; }
-
+.b{
+    font-weight: bold;
+}
 /**
  * Colors
  */
@@ -63,8 +65,11 @@ body {
     color: #000000;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
-
+h1,h2,h3{
+    margin-block:0.5rem
+}
 header{
    display: flex;
    flex-direction: column;
@@ -84,7 +89,7 @@ table {
     border: 2px solid #000000;
     background-color: #c3f3ff;
     overflow: hidden;
-    margin-bottom:0.5rem ;
+    /* margin-bottom:0.3rem ; */
     width: 100%;
 }
 
@@ -105,8 +110,26 @@ footer {
 footer table { width: 100% !important}
 
 #gradings thead th { color:black !important; }
+.middle-div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
+    gap:10px
 
-
+}
+.remarks-box{
+    border: 2px solid #000000;
+    position:relative
+}
+.remarks-box p{
+    position:absolute;
+    font-size:12px;
+    top:0;
+    left:0;
+    margin:0;
+}
+#summary td{
+    padding-block:20px
+}
 /**
  * For web page's print view
  */

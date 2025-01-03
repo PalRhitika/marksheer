@@ -44,6 +44,20 @@ def scores_rows(subjects=[]):
     # multi lines of total rows to leave a vertical space in the scores area
     if(counter<13):
         for i in range(0, 13 - counter):
-            html_row += re.sub(r"\_\_[A-Z0-9\_]+\_\_", "", html_snippet)
+            html_row += """
+            <tr class="bt2 empty-row">
+                <td class="r sn"></td>
+                <td class="l subject bl2"></td>
+                <td class="c ch bl2"></td>
+                <td class="r fm bl2"></td>
+                <td class="r fm bl2"></td>
+                <td class="r pm bl2"></td>
+                <td class="r pm bl2"></td>
+                <td class="r mo bl2"></td>
+                <td class="r mo bl2"></td>
+                <td class="r gpa bl2"></td>
+                <td class="c grade bl2"></td>
+            </tr>
+            """
 
     return html_row
