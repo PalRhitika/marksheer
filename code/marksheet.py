@@ -7,18 +7,18 @@ from scores_rows import scores_rows
 from libraries import fc, fw, compact_html
 from fill import fill_pdf_image_background
 
-marksheet_html = fc("themes/marksheet.html")
+marksheet_html = fc("../themes/marksheet.html")
 marksheet_html = marksheet_html.replace(
-    "<!-- #header-html -->", fc("themes/_header.html")
+    "<!-- #header-html -->", fc("../themes/_header.html")
 )
 marksheet_html = marksheet_html.replace(
-    "<!-- #scores-table -->", fc("themes/_scores.html")
+    "<!-- #scores-table -->", fc("../themes/_scores.html")
 )
 marksheet_html = marksheet_html.replace(
-    "<!-- #summary-table -->", fc("themes/_summary.html")
+    "<!-- #summary-table -->", fc("../themes/_summary.html")
 )
 marksheet_html = marksheet_html.replace(
-    "<!-- #gradings-table -->", fc("themes/_gradings.html")
+    "<!-- #gradings-table -->", fc("../themes/_gradings.html")
 )
 marksheet_html = marksheet_html.replace(
     # must match exactly
@@ -27,13 +27,13 @@ marksheet_html = marksheet_html.replace(
 )
 
 
-css = fc("themes/marksheet.css")
+css = fc("../themes/marksheet.css")
 css = replace_colors_with_black_or_white(css)
 
 
-fw("individuals/marksheet.css", css)
+fw("../individuals/marksheet.css", css)
 fw(
-    "individuals/full.html",
+    "../individuals/full.html",
     marksheet_html.replace(
         "<!-- #css -->", '<link rel="stylesheet" href="marksheet.css" />'
     ),
@@ -45,7 +45,7 @@ def generate_marksheet(student={}, sequence: int = 0):
     page = doc.new_page(width=595, height=842)
 
     # Optional
-    page = fill_pdf_image_background(page, "themes/logo-001.png")
+    page = fill_pdf_image_background(page, "../themes/logo-001.png")
 
     # Replace the data
     soup = BeautifulSoup(marksheet_html, "html.parser")
@@ -62,7 +62,7 @@ def generate_marksheet(student={}, sequence: int = 0):
     )
 
     fw(
-        f"individuals/individual-{sequence}.html",
+        f"../individuals/individual-{sequence}.html",
         compact_html(marksheet.replace(
         "<!-- #css -->", '<link rel="stylesheet" href="marksheet.css" />'
     ))
@@ -85,8 +85,8 @@ def generate_marksheet(student={}, sequence: int = 0):
     return doc
 
 
-# student = json.loads(fc("samples/student.json"))
-students = json.loads(fc("samples/students.json"))
+# student = json.loads(fc("../samples/student.json"))
+students = json.loads(fc("../samples/students.json"))
 
 bulk_pdf = pymupdf.open()
 
@@ -98,7 +98,7 @@ for sequence, student in enumerate(students):
 
 
 bulk_pdf.save(
-    "pdfs/combined.pdf",
+    "../pdfs/combined.pdf",
     garbage=4,
     clean=2,
     deflate=True,
