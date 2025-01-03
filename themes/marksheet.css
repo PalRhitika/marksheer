@@ -7,9 +7,7 @@
 
 .h { display: none; visibility: hidden; }
 .highlight { background-color: #c7c1c1; }
-.b{
-    font-weight: bold;
-}
+
 /**
  * Colors
  */
@@ -65,18 +63,14 @@ body {
     color: #000000;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
 }
-h1,h2,h3{
-    margin-block:0.5rem
-}
+
 header{
    display: flex;
    flex-direction: column;
    justify-content: flex-start;
+   margin-bottom:0.5rem;
    width:100%;
-   padding-inline: 4rem;
-   margin-bottom:0.5rem
 }
 
 main{
@@ -89,12 +83,17 @@ table {
     border: 2px solid #000000;
     background-color: #c3f3ff;
     overflow: hidden;
-    /* margin-bottom:0.3rem ; */
-    width: 100%;
+    margin-bottom:0.5rem ;
+    width: 700px;
+    min-width: 100%;
+}
+
+table#summary{
+    text-align: center;
 }
 
 th, td { padding: 8px; }
-th { color: #ffffff; font-weight: bold; vertical-align: center; }
+th { color: #000000; font-weight: bold; vertical-align: center; }
 thead tr.line1 { background-color: #ffffff; color: #000000; }
 thead tr.line2 { background-color: #dfaeae; color: #000000; }
 tbody { border: 2px solid #000000; }
@@ -104,32 +103,8 @@ footer {
     display: flex;
     justify-content:flex-start;
     padding-inline: 4rem;
-
 }
 
-footer table { width: 100% !important}
-
-#gradings thead th { color:black !important; }
-.middle-div{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) ;
-    gap:10px
-
-}
-.remarks-box{
-    border: 2px solid #000000;
-    position:relative
-}
-.remarks-box p{
-    position:absolute;
-    font-size:12px;
-    top:0;
-    left:0;
-    margin:0;
-}
-#summary td{
-    padding-block:20px
-}
 /**
  * For web page's print view
  */

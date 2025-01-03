@@ -14,7 +14,8 @@
     },
     "school": {
         "name": "XYZ High School",
-        "address": "Address, Ward"
+        "address": "Address, Ward",
+        "district": "District"
     },
     "total": {
         "fullmarks": 690,

@@ -1,4 +1,9 @@
 /__pycache__/
 /out
 /code/*.pdf
-/code/__pycache__/
+/code/__pycache__
+/code/out
+/code/individuals
+/pdfs/*.pdf
+/individuals/*.html
+/individuals/*.css

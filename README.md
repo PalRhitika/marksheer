@@ -1,13 +1,11 @@
 # Marksheet Generator
+
 ## Marksheet Features:
 - web display
 - printable from the web
 - bulk pdf print
 - storage
-
-## CSS Color Features:
-- Color find and replace in css
-- Monochromatic black/white
+- verification
 
 ## Subjectwise Marks
 
@@ -27,3 +25,25 @@ JSON Fields for the individual subjects:
 | grade       | A            | Letter Grade
 | percentage  | 85.00        | Percentage
 | remarks     | Pass         | Remarks
+
+
+## Marksheet Generation
+
+```
+python code/marksheet.py
+```
+
+It produces pdfs/combined.pdf pages
+
+## @todo
+- Remove white background from css and make pages transparent.
+
+
+## Media Types
+| Type | Description
+|------|-------------
+|.pdf  | 
+|.png  |-------------
+|.svg  |-------------
+|.epgz |-------------
+|.al4  |-------------
